@@ -16,7 +16,7 @@
 
 ## Recommended Release Asset
 
-- `dist/PDF_Decryptor-macOS-brew-fixed.zip`
+- `dist/PDF_Decryptor-macOS.zip`
 
 ## Suggested GitHub Topics
 

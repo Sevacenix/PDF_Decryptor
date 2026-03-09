@@ -6,6 +6,7 @@ DIST_DIR="$PROJECT_ROOT/dist"
 BUILD_ROOT="/tmp/pdf_decryptor_build"
 VENV_DIR="/tmp/pdf_decryptor_build_venv"
 PYTHON_BIN="${PYTHON_BIN:-/opt/homebrew/bin/python3.12}"
+APP_VERSION="${APP_VERSION:-1.0.1}"
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
   echo "未找到可用 Python: $PYTHON_BIN"
@@ -34,6 +35,23 @@ cp "$PROJECT_ROOT/requirements.txt" "$BUILD_ROOT/"
 cd "$BUILD_ROOT"
 "$VENV_DIR/bin/python" -m PyInstaller --noconfirm --clean --windowed --name PDF_Decryptor app.py
 
+INFO_PLIST="$BUILD_ROOT/dist/PDF_Decryptor.app/Contents/Info.plist"
+set_plist_value() {
+  local key="$1"
+  local type="$2"
+  local value="$3"
+
+  if /usr/libexec/PlistBuddy -c "Print :$key" "$INFO_PLIST" >/dev/null 2>&1; then
+    /usr/libexec/PlistBuddy -c "Set :$key $value" "$INFO_PLIST"
+  else
+    /usr/libexec/PlistBuddy -c "Add :$key $type $value" "$INFO_PLIST"
+  fi
+}
+
+set_plist_value "CFBundleShortVersionString" "string" "$APP_VERSION"
+set_plist_value "CFBundleVersion" "string" "$APP_VERSION"
+set_plist_value "CFBundleIdentifier" "string" "com.sevacenix.pdfdecryptor"
+
 # Keep old build for troubleshooting, publish fixed build to default name.
 if [[ -d "$DIST_DIR/PDF_Decryptor.app" ]]; then
   rm -rf "$DIST_DIR/PDF_Decryptor-broken-system-python.app"
@@ -45,9 +63,9 @@ cp -R "$BUILD_ROOT/dist/PDF_Decryptor.app" "$DIST_DIR/PDF_Decryptor-fixed.app"
 
 ditto -c -k --sequesterRsrc --keepParent \
   "$BUILD_ROOT/dist/PDF_Decryptor.app" \
-  "$DIST_DIR/PDF_Decryptor-macOS-brew-fixed.zip"
+  "$DIST_DIR/PDF_Decryptor-macOS.zip"
 
 echo "构建完成:"
 echo "  $DIST_DIR/PDF_Decryptor.app"
 echo "  $DIST_DIR/PDF_Decryptor-fixed.app"
-echo "  $DIST_DIR/PDF_Decryptor-macOS-brew-fixed.zip"
+echo "  $DIST_DIR/PDF_Decryptor-macOS.zip"

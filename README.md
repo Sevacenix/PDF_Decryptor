@@ -1,12 +1,23 @@
 # PDF Decryptor
 
+[![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
+[![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
+
 A lightweight desktop utility for detecting and removing PDF passwords in batches.
 
 [中文说明](README.zh-CN.md)
 
+## Download
+
+[Download the latest macOS build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+
 ## Overview
 
 PDF Decryptor is a small GUI tool built with `tkinter` and `pypdf`. It is designed for people who need a simple desktop workflow instead of command-line scripts.
+
+## Preview
+
+![PDF Decryptor preview](docs/assets/pdf-decryptor-preview.svg)
 
 ## Features
 
@@ -67,11 +78,11 @@ Examples:
 
 If a file with the same name already exists in the output folder, the app appends `_1`, `_2`, and so on.
 
-## GitHub Release Assets
+## Release Asset
 
-Suggested release asset:
+Current release asset:
 
-- `PDF_Decryptor-macOS-brew-fixed.zip`
+- `PDF_Decryptor-macOS.zip`
 
 Suggested screenshots and release copy are prepared in [docs/GITHUB_RELEASE_COPY.md](docs/GITHUB_RELEASE_COPY.md).
 

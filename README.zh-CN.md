@@ -1,12 +1,23 @@
 # PDF 解密器
 
+[![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
+[![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
+
 一个轻量级桌面工具，用来批量检测 PDF 是否加密，并在输入密码后批量去除密码。
 
 [English README](README.md)
 
+## 下载
+
+[下载最新 macOS 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+
 ## 项目简介
 
 PDF Decryptor 基于 `tkinter` 和 `pypdf` 开发，面向不想使用命令行脚本的普通用户，提供直接可用的图形界面解密流程。
+
+## 预览图
+
+![PDF Decryptor 预览图](docs/assets/pdf-decryptor-preview.svg)
 
 ## 功能特性
 
@@ -71,7 +82,7 @@ brew install python@3.12 python-tk@3.12
 
 推荐上传的 Release 资产：
 
-- `PDF_Decryptor-macOS-brew-fixed.zip`
+- `PDF_Decryptor-macOS.zip`
 
 仓库描述、功能介绍和发布文案已整理在 [docs/GITHUB_RELEASE_COPY.md](docs/GITHUB_RELEASE_COPY.md)。
 

@@ -41,7 +41,15 @@ English:
 ## Suggested Release Notes
 
 English:
-This release includes the first public desktop build of PDF Decryptor. It supports batch PDF import, encryption detection, AES decryption, custom output naming, original file name export, and a bilingual Chinese-English interface.
+This release includes the first polished public desktop build of PDF Decryptor. It supports batch PDF import, encryption detection, AES decryption, custom output naming, original file name export, and a bilingual Chinese-English interface.
 
 中文：
-这个版本是 PDF Decryptor 的首个公开桌面版本，支持批量导入 PDF、检测加密状态、AES 解密、自定义输出命名、原文件名导出，以及中英双语界面。
+这个版本是 PDF Decryptor 首个正式完善后的公开桌面版本，支持批量导入 PDF、检测加密状态、AES 解密、自定义输出命名、原文件名导出，以及中英双语界面。
+
+## Recommended Release Asset
+
+English:
+- PDF_Decryptor-macOS.zip
+
+中文：
+- PDF_Decryptor-macOS.zip

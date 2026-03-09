@@ -1,0 +1,72 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1400" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="160" y1="120" x2="1240" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" rx="32" fill="url(#bg)"/>
+  <rect x="72" y="72" width="1256" height="756" rx="24" fill="url(#hero)" stroke="#334155" stroke-width="2"/>
+  <rect x="72" y="72" width="1256" height="62" rx="24" fill="#0B1220"/>
+  <circle cx="112" cy="103" r="11" fill="#FF5F57"/>
+  <circle cx="144" cy="103" r="11" fill="#FEBC2E"/>
+  <circle cx="176" cy="103" r="11" fill="#28C840"/>
+  <text x="700" y="110" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="700">PDF Decryptor</text>
+
+  <rect x="110" y="168" width="176" height="44" rx="10" fill="#334155"/>
+  <rect x="302" y="168" width="152" height="44" rx="10" fill="#334155"/>
+  <rect x="470" y="168" width="166" height="44" rx="10" fill="#334155"/>
+  <rect x="652" y="168" width="146" height="44" rx="10" fill="#334155"/>
+  <rect x="814" y="168" width="142" height="44" rx="10" fill="#334155"/>
+  <text x="198" y="196" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Add PDF Files</text>
+  <text x="378" y="196" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Add Folder</text>
+  <text x="553" y="196" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Remove Selected</text>
+  <text x="725" y="196" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Clear List</text>
+  <text x="885" y="196" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="18" text-anchor="middle">Detect Again</text>
+
+  <rect x="110" y="244" width="1180" height="410" rx="16" fill="#0B1220" stroke="#334155"/>
+  <text x="132" y="282" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">#</text>
+  <text x="220" y="282" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">File Path</text>
+  <text x="900" y="282" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Encrypted</text>
+  <text x="1048" y="282" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Status</text>
+  <line x1="110" y1="300" x2="1290" y2="300" stroke="#334155"/>
+
+  <text x="132" y="346" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">1</text>
+  <text x="220" y="346" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">/Users/demo/Documents/contract.pdf</text>
+  <text x="920" y="346" fill="#FBBF24" font-family="Arial, sans-serif" font-size="17">Yes</text>
+  <text x="1048" y="346" fill="#22C55E" font-family="Arial, sans-serif" font-size="17">Detected</text>
+
+  <text x="132" y="392" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">2</text>
+  <text x="220" y="392" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">/Users/demo/Documents/invoice.pdf</text>
+  <text x="920" y="392" fill="#94A3B8" font-family="Arial, sans-serif" font-size="17">No</text>
+  <text x="1048" y="392" fill="#94A3B8" font-family="Arial, sans-serif" font-size="17">Skipped</text>
+
+  <text x="132" y="438" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">3</text>
+  <text x="220" y="438" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">/Users/demo/Documents/report.pdf</text>
+  <text x="920" y="438" fill="#FBBF24" font-family="Arial, sans-serif" font-size="17">Yes</text>
+  <text x="1048" y="438" fill="#22C55E" font-family="Arial, sans-serif" font-size="17">Decrypted -&gt; report.pdf</text>
+
+  <text x="132" y="484" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">4</text>
+  <text x="220" y="484" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="17">/Users/demo/Documents/archive.pdf</text>
+  <text x="920" y="484" fill="#FBBF24" font-family="Arial, sans-serif" font-size="17">Yes</text>
+  <text x="1048" y="484" fill="#22C55E" font-family="Arial, sans-serif" font-size="17">Ready</text>
+
+  <rect x="110" y="686" width="1180" height="104" rx="16" fill="#111827" stroke="#334155"/>
+  <text x="132" y="720" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Output Folder</text>
+  <rect x="244" y="694" width="530" height="40" rx="8" fill="#1F2937"/>
+  <text x="262" y="720" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="16">/Users/demo/Downloads/PDF decrypted</text>
+  <rect x="1124" y="694" width="136" height="40" rx="8" fill="#334155"/>
+  <text x="1192" y="720" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Choose Folder</text>
+
+  <text x="132" y="770" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Password</text>
+  <rect x="244" y="744" width="530" height="40" rx="8" fill="#1F2937"/>
+  <text x="262" y="770" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="16">********</text>
+  <rect x="1110" y="744" width="150" height="40" rx="8" fill="#2563EB"/>
+  <text x="1185" y="770" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Start Batch Decrypt</text>
+
+  <text x="112" y="836" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="15">A lightweight desktop PDF decryptor with batch processing, AES support, and bilingual UI.</text>
+</svg>
