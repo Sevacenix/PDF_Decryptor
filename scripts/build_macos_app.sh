@@ -7,6 +7,7 @@ BUILD_ROOT="/tmp/pdf_decryptor_build"
 VENV_DIR="/tmp/pdf_decryptor_build_venv"
 PYTHON_BIN="${PYTHON_BIN:-/opt/homebrew/bin/python3.12}"
 APP_VERSION="${APP_VERSION:-1.0.1}"
+ICON_PATH="$PROJECT_ROOT/assets/PDF_Decryptor.icns"
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
   echo "未找到可用 Python: $PYTHON_BIN"
@@ -33,7 +34,13 @@ cp "$PROJECT_ROOT/requirements.txt" "$BUILD_ROOT/"
 "$VENV_DIR/bin/pip" install -r "$BUILD_ROOT/requirements.txt" pyinstaller >/dev/null
 
 cd "$BUILD_ROOT"
-"$VENV_DIR/bin/python" -m PyInstaller --noconfirm --clean --windowed --name PDF_Decryptor app.py
+"$VENV_DIR/bin/python" -m PyInstaller \
+  --noconfirm \
+  --clean \
+  --windowed \
+  --name PDF_Decryptor \
+  --icon "$ICON_PATH" \
+  app.py
 
 INFO_PLIST="$BUILD_ROOT/dist/PDF_Decryptor.app/Contents/Info.plist"
 set_plist_value() {
