@@ -5,9 +5,25 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIST_DIR="$PROJECT_ROOT/dist"
 BUILD_ROOT="/tmp/pdf_decryptor_build"
 VENV_DIR="/tmp/pdf_decryptor_build_venv"
-PYTHON_BIN="${PYTHON_BIN:-/opt/homebrew/bin/python3.12}"
-APP_VERSION="${APP_VERSION:-1.0.3}"
+APP_BUNDLE_NAME="Batch PDF Decryptor"
+PYTHON_BIN="${PYTHON_BIN:-}"
+APP_VERSION="${APP_VERSION:-1.0.4}"
 ICON_PATH="$PROJECT_ROOT/assets/PDF_Decryptor.icns"
+
+if [[ -z "$PYTHON_BIN" ]]; then
+  if command -v python3.12 >/dev/null 2>&1; then
+    PYTHON_BIN="$(command -v python3.12)"
+  elif command -v brew >/dev/null 2>&1; then
+    BREW_PYTHON_BIN="$(brew --prefix python@3.12 2>/dev/null)/bin/python3.12"
+    if [[ -x "$BREW_PYTHON_BIN" ]]; then
+      PYTHON_BIN="$BREW_PYTHON_BIN"
+    fi
+  elif [[ -x /opt/homebrew/bin/python3.12 ]]; then
+    PYTHON_BIN="/opt/homebrew/bin/python3.12"
+  elif [[ -x /usr/local/bin/python3.12 ]]; then
+    PYTHON_BIN="/usr/local/bin/python3.12"
+  fi
+fi
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
   echo "未找到可用 Python: $PYTHON_BIN"
@@ -38,11 +54,11 @@ cd "$BUILD_ROOT"
   --noconfirm \
   --clean \
   --windowed \
-  --name PDF_Decryptor \
+  --name "$APP_BUNDLE_NAME" \
   --icon "$ICON_PATH" \
   app.py
 
-INFO_PLIST="$BUILD_ROOT/dist/PDF_Decryptor.app/Contents/Info.plist"
+INFO_PLIST="$BUILD_ROOT/dist/$APP_BUNDLE_NAME.app/Contents/Info.plist"
 set_plist_value() {
   local key="$1"
   local type="$2"
@@ -58,26 +74,29 @@ set_plist_value() {
 set_plist_value "CFBundleShortVersionString" "string" "$APP_VERSION"
 set_plist_value "CFBundleVersion" "string" "$APP_VERSION"
 set_plist_value "CFBundleIdentifier" "string" "com.sevacenix.pdfdecryptor"
-set_plist_value "CFBundleName" "string" "PDF_Decryptor"
-set_plist_value "CFBundleDisplayName" "string" "PDF_Decryptor"
+set_plist_value "CFBundleName" "string" "$APP_BUNDLE_NAME"
+set_plist_value "CFBundleDisplayName" "string" "$APP_BUNDLE_NAME"
 set_plist_value "NSHumanReadableCopyright" "string" "Copyright 2026 Sevacenix"
 
 # Keep old build for troubleshooting, publish fixed build to default name.
+rm -rf "$DIST_DIR/$APP_BUNDLE_NAME.app"
 if [[ -d "$DIST_DIR/PDF_Decryptor.app" ]]; then
   rm -rf "$DIST_DIR/PDF_Decryptor-broken-system-python.app"
   mv "$DIST_DIR/PDF_Decryptor.app" "$DIST_DIR/PDF_Decryptor-broken-system-python.app"
 fi
 
-cp -R "$BUILD_ROOT/dist/PDF_Decryptor.app" "$DIST_DIR/PDF_Decryptor.app"
-cp -R "$BUILD_ROOT/dist/PDF_Decryptor.app" "$DIST_DIR/PDF_Decryptor-fixed.app"
+cp -R "$BUILD_ROOT/dist/$APP_BUNDLE_NAME.app" "$DIST_DIR/$APP_BUNDLE_NAME.app"
+cp -R "$BUILD_ROOT/dist/$APP_BUNDLE_NAME.app" "$DIST_DIR/PDF_Decryptor.app"
+cp -R "$BUILD_ROOT/dist/$APP_BUNDLE_NAME.app" "$DIST_DIR/PDF_Decryptor-fixed.app"
 
 ditto -c -k --sequesterRsrc --keepParent \
-  "$BUILD_ROOT/dist/PDF_Decryptor.app" \
+  "$BUILD_ROOT/dist/$APP_BUNDLE_NAME.app" \
   "$DIST_DIR/PDF_Decryptor-macOS.zip"
 
 shasum -a 256 "$DIST_DIR/PDF_Decryptor-macOS.zip" > "$DIST_DIR/PDF_Decryptor-macOS.zip.sha256"
 
 echo "构建完成:"
+echo "  $DIST_DIR/$APP_BUNDLE_NAME.app"
 echo "  $DIST_DIR/PDF_Decryptor.app"
 echo "  $DIST_DIR/PDF_Decryptor-fixed.app"
 echo "  $DIST_DIR/PDF_Decryptor-macOS.zip"

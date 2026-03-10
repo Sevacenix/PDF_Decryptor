@@ -1,9 +1,9 @@
-# PDF Decryptor
+# Batch PDF Decryptor
 
 [![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
 [![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
 
-A lightweight desktop utility for detecting and removing PDF passwords in batches.
+A desktop utility for batch PDF decryption and batch output naming.
 
 [中文说明](README.zh-CN.md)
 
@@ -25,10 +25,11 @@ A lightweight desktop utility for detecting and removing PDF passwords in batche
 - Decrypt multiple files with one password
 - AES-encrypted PDF support
 - Save decrypted files to a selected folder
-- Flexible output naming with placeholder rules
+- Batch output naming with placeholder rules
 - One-click original file name export
 - Password visibility toggle
 - Chinese and English UI support
+- Focused on decryption and output naming, not PDF content editing
 
 ## Quick Start
 
@@ -50,7 +51,7 @@ Use Windows PowerShell:
 
 ```powershell
 py -3.12 -m pip install -r requirements.txt
-./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.3"
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.4"
 ```
 
 This generates:
@@ -66,7 +67,7 @@ This generates:
 - If that happens, choose `More info` and then `Run anyway`
 - Each release also includes a `.sha256` checksum file for verification
 - Windows packaging is prepared through `scripts/build_windows_app.ps1`
-- GitHub Actions can build and upload the Windows release asset automatically
+- GitHub Actions can build and upload both macOS and Windows release assets automatically
 
 ## Output Name Pattern
 

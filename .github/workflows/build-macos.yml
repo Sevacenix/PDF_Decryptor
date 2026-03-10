@@ -1,0 +1,70 @@
+name: Build macOS Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_version:
+        description: App version to package
+        required: false
+        default: 1.0.4
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Resolve app version
+        id: version
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            version="${{ github.event.release.tag_name }}"
+            version="${version#v}"
+          else
+            version="${{ github.event.inputs.app_version }}"
+          fi
+          echo "app_version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Install Homebrew Python and Tk
+        id: python
+        shell: bash
+        run: |
+          brew update
+          brew install python@3.12 python-tk@3.12
+          echo "python_bin=$(brew --prefix python@3.12)/bin/python3.12" >> "$GITHUB_OUTPUT"
+
+      - name: Build macOS package
+        shell: bash
+        env:
+          PYTHON_BIN: ${{ steps.python.outputs.python_bin }}
+          APP_VERSION: ${{ steps.version.outputs.app_version }}
+        run: ./scripts/build_macos_app.sh
+
+      - name: Upload workflow artifact
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF_Decryptor-macOS-${{ steps.version.outputs.app_version }}
+          path: |
+            dist/PDF_Decryptor-macOS.zip
+            dist/PDF_Decryptor-macOS.zip.sha256
+
+      - name: Upload assets to release
+        if: github.event_name == 'release'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            dist/PDF_Decryptor-macOS.zip \
+            dist/PDF_Decryptor-macOS.zip.sha256 \
+            --clobber

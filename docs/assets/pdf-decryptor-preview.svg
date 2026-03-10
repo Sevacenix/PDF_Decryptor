@@ -15,7 +15,7 @@
   <circle cx="112" cy="103" r="11" fill="#FF5F57"/>
   <circle cx="144" cy="103" r="11" fill="#FEBC2E"/>
   <circle cx="176" cy="103" r="11" fill="#28C840"/>
-  <text x="700" y="110" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="700">PDF Decryptor</text>
+  <text x="700" y="110" fill="#E5E7EB" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="700">Batch PDF Decryptor</text>
 
   <rect x="110" y="168" width="176" height="44" rx="10" fill="#334155"/>
   <rect x="302" y="168" width="152" height="44" rx="10" fill="#334155"/>
@@ -68,5 +68,5 @@
   <rect x="1110" y="744" width="150" height="40" rx="8" fill="#2563EB"/>
   <text x="1185" y="770" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Start Batch Decrypt</text>
 
-  <text x="112" y="836" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="15">A lightweight desktop PDF decryptor with batch processing, AES support, and bilingual UI.</text>
+  <text x="112" y="836" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="15">Batch PDF decryption and output naming with AES support and a bilingual UI.</text>
 </svg>

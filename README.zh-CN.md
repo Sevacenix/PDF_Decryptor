@@ -1,9 +1,9 @@
-# PDF 解密器
+# 批量 PDF 解密与命名工具
 
 [![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
 [![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
 
-一个轻量级桌面工具，用来批量检测 PDF 是否加密，并在输入密码后批量去除密码。
+一个桌面工具，用来批量检测 PDF 是否加密、输入一次密码后批量解密，并按规则批量命名输出结果文件。
 
 [English README](README.md)
 
@@ -25,10 +25,11 @@
 - 输入一次密码后批量解密多个文件
 - 支持 AES 加密 PDF
 - 输出到指定目录
-- 支持自定义输出文件名格式
+- 支持批量输出命名和自定义文件名格式
 - 一键使用原文件名输出
 - 支持显示或隐藏密码输入内容
 - 支持中文和英文界面
+- 聚焦批量解密和批量命名输出，不修改 PDF 内容
 
 ## 快速开始
 
@@ -50,7 +51,7 @@ brew install python@3.12 python-tk@3.12
 
 ```powershell
 py -3.12 -m pip install -r requirements.txt
-./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.3"
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.4"
 ```
 
 会生成：
@@ -66,7 +67,7 @@ py -3.12 -m pip install -r requirements.txt
 - 如果出现提示，可以点击“更多信息”后继续运行
 - 每个 release 也会附带一个 `.sha256` 校验文件
 - Windows 打包脚本已经准备好：`scripts/build_windows_app.ps1`
-- GitHub Actions 可以自动构建并上传 Windows 发布资产
+- GitHub Actions 可以自动构建并上传 macOS 和 Windows 发布资产
 
 ## 文件名格式
 

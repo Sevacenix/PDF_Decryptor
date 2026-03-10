@@ -14,8 +14,8 @@ from tkinter import filedialog, messagebox, ttk
 from pypdf import PdfReader, PdfWriter
 from pypdf.errors import DependencyError
 
-APP_NAME = "PDF_Decryptor"
-APP_VERSION = "1.0.3"
+APP_NAME = "Batch PDF Decryptor"
+APP_VERSION = "1.0.4"
 REPOSITORY_URL = "https://github.com/Sevacenix/PDF_Decryptor"
 
 LANGUAGE_NAMES = {
@@ -25,7 +25,7 @@ LANGUAGE_NAMES = {
 
 TRANSLATIONS = {
     "zh-CN": {
-        "app_title": "轻量级 PDF 解密器",
+        "app_title": "批量 PDF 解密与命名工具",
         "language": "界面语言",
         "add_pdf": "批量添加 PDF",
         "add_folder": "添加文件夹",
@@ -84,13 +84,13 @@ TRANSLATIONS = {
         "enc_no": "否",
         "enc_unknown": "未知",
         "menu_app": "应用",
-        "menu_about": "关于 PDF_Decryptor",
+        "menu_about": "关于 Batch PDF Decryptor",
         "menu_open_repo": "打开 GitHub 仓库",
         "menu_quit": "退出",
-        "about_body": "PDF_Decryptor\n版本 {version}\n\n一个轻量级桌面 PDF 解密工具。\n支持批量处理、AES 解密和中英双语界面。\n\n仓库地址:\n{url}",
+        "about_body": "Batch PDF Decryptor\n版本 {version}\n\n一个面向批量处理的桌面 PDF 工具。\n支持批量检测加密状态、输入一次密码后批量解密，并按规则批量命名输出。\n支持 AES 解密和中英双语界面。\n\n仓库地址:\n{url}",
     },
     "en": {
-        "app_title": "Lightweight PDF Decryptor",
+        "app_title": "Batch PDF Decryptor",
         "language": "Language",
         "add_pdf": "Add PDF Files",
         "add_folder": "Add Folder",
@@ -149,10 +149,10 @@ TRANSLATIONS = {
         "enc_no": "No",
         "enc_unknown": "Unknown",
         "menu_app": "App",
-        "menu_about": "About PDF_Decryptor",
+        "menu_about": "About Batch PDF Decryptor",
         "menu_open_repo": "Open GitHub Repository",
         "menu_quit": "Quit",
-        "about_body": "PDF_Decryptor\nVersion {version}\n\nA lightweight desktop PDF decryptor.\nSupports batch processing, AES decryption, and a bilingual Chinese-English UI.\n\nRepository:\n{url}",
+        "about_body": "Batch PDF Decryptor\nVersion {version}\n\nA desktop utility focused on batch PDF decryption and batch output naming.\nDetect encrypted PDFs, decrypt multiple files with one password, and export them with flexible naming rules.\nSupports AES decryption and a bilingual Chinese-English UI.\n\nRepository:\n{url}",
     },
 }
 
@@ -592,7 +592,7 @@ class PdfDecryptorApp(tk.Tk):
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="PDF Decryptor")
+    parser = argparse.ArgumentParser(description="Batch PDF Decryptor")
     parser.add_argument("--lang", choices=sorted(TRANSLATIONS.keys()))
     return parser.parse_args()
 

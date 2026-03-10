@@ -1,6 +1,6 @@
 param(
     [string]$PythonExe = "py -3.12",
-    [string]$AppVersion = "1.0.3"
+    [string]$AppVersion = "1.0.4"
 )
 
 $ErrorActionPreference = "Stop"
@@ -10,6 +10,7 @@ $DistDir = Join-Path $ProjectRoot "dist"
 $BuildRoot = Join-Path $env:TEMP "pdf_decryptor_build_windows"
 $VenvDir = Join-Path $env:TEMP "pdf_decryptor_build_windows_venv"
 $IconPath = Join-Path $ProjectRoot "assets\PDF_Decryptor.ico"
+$AppProductName = "Batch PDF Decryptor"
 
 function Invoke-Python {
     param(
@@ -43,7 +44,7 @@ $PyInstallerArgs = @(
     "--noconfirm",
     "--clean",
     "--windowed",
-    "--name", "PDF_Decryptor"
+    "--name", $AppProductName
 )
 
 & $VenvPython -m pip install --upgrade pip | Out-Null
@@ -78,11 +79,11 @@ VSVersionInfo(
         '040904B0',
         [
           StringStruct('CompanyName', 'Sevacenix'),
-          StringStruct('FileDescription', 'PDF_Decryptor'),
+          StringStruct('FileDescription', 'Batch PDF Decryptor'),
           StringStruct('FileVersion', '$AppVersion'),
-          StringStruct('InternalName', 'PDF_Decryptor'),
-          StringStruct('OriginalFilename', 'PDF_Decryptor.exe'),
-          StringStruct('ProductName', 'PDF_Decryptor'),
+          StringStruct('InternalName', 'Batch PDF Decryptor'),
+          StringStruct('OriginalFilename', 'Batch PDF Decryptor.exe'),
+          StringStruct('ProductName', 'Batch PDF Decryptor'),
           StringStruct('ProductVersion', '$AppVersion')
         ]
       )
@@ -103,7 +104,7 @@ finally {
     Pop-Location
 }
 
-$OutputFolder = Join-Path $BuildRoot "dist\PDF_Decryptor"
+$OutputFolder = Join-Path $BuildRoot "dist\$AppProductName"
 $ZipPath = Join-Path $DistDir "PDF_Decryptor-windows.zip"
 $HashPath = Join-Path $DistDir "PDF_Decryptor-windows.zip.sha256"
 
