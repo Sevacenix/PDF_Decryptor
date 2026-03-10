@@ -10,6 +10,7 @@
 ## 下载
 
 [下载最新 macOS 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+[下载 SHA-256 校验文件](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
 
 ## 预览图
 
@@ -40,6 +41,12 @@ python3 app.py
 brew install python@3.12 python-tk@3.12
 ./scripts/build_macos_app.sh
 ```
+
+## 安装说明
+
+- macOS 首次打开时可能会提示确认应用来源
+- 如果出现提示，可以右键应用后选择“打开”
+- 每个 release 也会附带一个 `.sha256` 校验文件
 
 ## 文件名格式
 

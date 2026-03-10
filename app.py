@@ -4,6 +4,7 @@ import argparse
 import locale
 import os
 import shutil
+import webbrowser
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -12,6 +13,10 @@ from tkinter import filedialog, messagebox, ttk
 
 from pypdf import PdfReader, PdfWriter
 from pypdf.errors import DependencyError
+
+APP_NAME = "PDF_Decryptor"
+APP_VERSION = "1.0.3"
+REPOSITORY_URL = "https://github.com/Sevacenix/PDF_Decryptor"
 
 LANGUAGE_NAMES = {
     "zh-CN": "中文",
@@ -49,6 +54,7 @@ TRANSLATIONS = {
         "dialog_notice": "提示",
         "dialog_error": "错误",
         "dialog_complete": "完成",
+        "dialog_about": "关于",
         "summary_loaded": "共 {total} 个文件，其中加密文件 {encrypted} 个。",
         "summary_no_new_files": "没有新增文件，可能是重复文件或非 PDF 文件。",
         "complete_result": "处理完成: 成功 {success}，失败 {failed}，跳过 {skipped}。",
@@ -77,6 +83,11 @@ TRANSLATIONS = {
         "enc_yes": "是",
         "enc_no": "否",
         "enc_unknown": "未知",
+        "menu_app": "应用",
+        "menu_about": "关于 PDF_Decryptor",
+        "menu_open_repo": "打开 GitHub 仓库",
+        "menu_quit": "退出",
+        "about_body": "PDF_Decryptor\n版本 {version}\n\n一个轻量级桌面 PDF 解密工具。\n支持批量处理、AES 解密和中英双语界面。\n\n仓库地址:\n{url}",
     },
     "en": {
         "app_title": "Lightweight PDF Decryptor",
@@ -108,6 +119,7 @@ TRANSLATIONS = {
         "dialog_notice": "Notice",
         "dialog_error": "Error",
         "dialog_complete": "Completed",
+        "dialog_about": "About",
         "summary_loaded": "{total} files loaded, {encrypted} encrypted.",
         "summary_no_new_files": "No new files were added. They may already exist in the list or not be PDFs.",
         "complete_result": "Finished: {success} succeeded, {failed} failed, {skipped} skipped.",
@@ -136,6 +148,11 @@ TRANSLATIONS = {
         "enc_yes": "Yes",
         "enc_no": "No",
         "enc_unknown": "Unknown",
+        "menu_app": "App",
+        "menu_about": "About PDF_Decryptor",
+        "menu_open_repo": "Open GitHub Repository",
+        "menu_quit": "Quit",
+        "about_body": "PDF_Decryptor\nVersion {version}\n\nA lightweight desktop PDF decryptor.\nSupports batch processing, AES decryption, and a bilingual Chinese-English UI.\n\nRepository:\n{url}",
     },
 }
 
@@ -190,6 +207,7 @@ class PdfDecryptorApp(tk.Tk):
             child.destroy()
 
         self.title(self.t("app_title"))
+        self._build_menu()
         root = ttk.Frame(self, padding=12)
         root.pack(fill="both", expand=True)
 
@@ -298,9 +316,29 @@ class PdfDecryptorApp(tk.Tk):
         self._build_ui()
         self.refresh_table()
 
+    def _build_menu(self) -> None:
+        menubar = tk.Menu(self)
+        app_menu = tk.Menu(menubar, tearoff=0)
+        app_menu.add_command(label=self.t("menu_about"), command=self.show_about)
+        app_menu.add_command(label=self.t("menu_open_repo"), command=self.open_repository)
+        app_menu.add_separator()
+        app_menu.add_command(label=self.t("menu_quit"), command=self.quit)
+        menubar.add_cascade(label=self.t("menu_app"), menu=app_menu)
+        self.configure(menu=menubar)
+
     def set_status(self, item: PdfTaskItem, key: str, **context: object) -> None:
         item.status_key = key
         item.status_context = {k: str(v) for k, v in context.items()}
+
+    def show_about(self) -> None:
+        messagebox.showinfo(
+            self.t("dialog_about"),
+            self.t("about_body", version=APP_VERSION, url=REPOSITORY_URL),
+        )
+
+    @staticmethod
+    def open_repository() -> None:
+        webbrowser.open(REPOSITORY_URL)
 
     def status_text(self, item: PdfTaskItem) -> str:
         return self.t(item.status_key, **item.status_context) if item.status_key else ""

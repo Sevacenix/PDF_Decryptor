@@ -6,7 +6,7 @@ DIST_DIR="$PROJECT_ROOT/dist"
 BUILD_ROOT="/tmp/pdf_decryptor_build"
 VENV_DIR="/tmp/pdf_decryptor_build_venv"
 PYTHON_BIN="${PYTHON_BIN:-/opt/homebrew/bin/python3.12}"
-APP_VERSION="${APP_VERSION:-1.0.1}"
+APP_VERSION="${APP_VERSION:-1.0.3}"
 ICON_PATH="$PROJECT_ROOT/assets/PDF_Decryptor.icns"
 
 if [[ ! -x "$PYTHON_BIN" ]]; then
@@ -58,6 +58,9 @@ set_plist_value() {
 set_plist_value "CFBundleShortVersionString" "string" "$APP_VERSION"
 set_plist_value "CFBundleVersion" "string" "$APP_VERSION"
 set_plist_value "CFBundleIdentifier" "string" "com.sevacenix.pdfdecryptor"
+set_plist_value "CFBundleName" "string" "PDF_Decryptor"
+set_plist_value "CFBundleDisplayName" "string" "PDF_Decryptor"
+set_plist_value "NSHumanReadableCopyright" "string" "Copyright 2026 Sevacenix"
 
 # Keep old build for troubleshooting, publish fixed build to default name.
 if [[ -d "$DIST_DIR/PDF_Decryptor.app" ]]; then
@@ -72,7 +75,10 @@ ditto -c -k --sequesterRsrc --keepParent \
   "$BUILD_ROOT/dist/PDF_Decryptor.app" \
   "$DIST_DIR/PDF_Decryptor-macOS.zip"
 
+shasum -a 256 "$DIST_DIR/PDF_Decryptor-macOS.zip" > "$DIST_DIR/PDF_Decryptor-macOS.zip.sha256"
+
 echo "构建完成:"
 echo "  $DIST_DIR/PDF_Decryptor.app"
 echo "  $DIST_DIR/PDF_Decryptor-fixed.app"
 echo "  $DIST_DIR/PDF_Decryptor-macOS.zip"
+echo "  $DIST_DIR/PDF_Decryptor-macOS.zip.sha256"

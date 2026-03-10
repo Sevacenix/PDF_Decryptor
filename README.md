@@ -10,6 +10,7 @@ A lightweight desktop utility for detecting and removing PDF passwords in batche
 ## Download
 
 [Download the latest macOS build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+[Download the SHA-256 checksum](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
 
 ## Preview
 
@@ -40,6 +41,12 @@ python3 app.py
 brew install python@3.12 python-tk@3.12
 ./scripts/build_macos_app.sh
 ```
+
+## Install Notes
+
+- macOS may ask you to confirm the app on first launch
+- If that happens, right-click the app and choose `Open`
+- Each release also includes a `.sha256` checksum file for verification
 
 ## Output Name Pattern
 
