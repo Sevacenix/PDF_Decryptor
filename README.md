@@ -1,7 +1,7 @@
 # Batch PDF Decryptor
 
-[![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
-[![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Sevacenix/Batch_PDF_Decryptor)](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases)
+[![License](https://img.shields.io/github/license/Sevacenix/Batch_PDF_Decryptor)](LICENSE)
 
 A desktop utility for batch PDF decryption and batch output naming.
 
@@ -9,14 +9,22 @@ A desktop utility for batch PDF decryption and batch output naming.
 
 ## Download
 
-[Download the latest macOS build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
-[Download the SHA-256 checksum](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
-[Download the latest Windows build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
-[Download the Windows SHA-256 checksum](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
+[Download the latest macOS build](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+[Download the SHA-256 checksum](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
+[Download the latest Windows build](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
+[Download the Windows SHA-256 checksum](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
 
 ## Preview
 
 ![PDF Decryptor preview](docs/assets/pdf-decryptor-preview.svg)
+
+## Release Preview
+
+English:
+![Batch PDF Decryptor English preview](docs/assets/release-preview-en.svg)
+
+中文：
+![Batch PDF Decryptor 中文预览图](docs/assets/release-preview-zh-CN.svg)
 
 ## Features
 
@@ -51,7 +59,7 @@ Use Windows PowerShell:
 
 ```powershell
 py -3.12 -m pip install -r requirements.txt
-./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.4"
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.5"
 ```
 
 This generates:

@@ -15,8 +15,8 @@ from pypdf import PdfReader, PdfWriter
 from pypdf.errors import DependencyError
 
 APP_NAME = "Batch PDF Decryptor"
-APP_VERSION = "1.0.4"
-REPOSITORY_URL = "https://github.com/Sevacenix/PDF_Decryptor"
+APP_VERSION = "1.0.5"
+REPOSITORY_URL = "https://github.com/Sevacenix/Batch_PDF_Decryptor"
 
 LANGUAGE_NAMES = {
     "zh-CN": "中文",

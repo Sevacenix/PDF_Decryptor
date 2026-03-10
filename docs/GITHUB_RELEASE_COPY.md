@@ -3,10 +3,10 @@
 ## Repository Description
 
 English:
-Desktop utility for batch PDF decryption and batch output naming, with AES support and a bilingual Chinese-English interface.
+Desktop utility for batch PDF decryption and batch output naming, with AES support, bilingual UI, and release-ready assets for macOS and Windows.
 
 中文：
-一个桌面 PDF 工具，突出批量解密和批量命名输出，支持 AES 解密和中英双语界面。
+一个桌面 PDF 工具，突出批量解密和批量命名输出，支持 AES 解密、中英双语界面，以及可直接下载的 macOS 和 Windows 发布版本。
 
 ## Short Feature Intro
 
@@ -41,10 +41,42 @@ English:
 ## Suggested Release Notes
 
 English:
-This release includes the polished public desktop build of Batch PDF Decryptor. It supports batch PDF import, encryption detection, AES decryption, batch output naming, original file name export, and a bilingual Chinese-English interface.
+This release delivers the polished public desktop build of Batch PDF Decryptor. It focuses on the full batch workflow: import encrypted PDFs in bulk, detect protection status automatically, remove passwords with one shared password, and export clean files with consistent output naming.
 
 中文：
-这个版本是 Batch PDF Decryptor 的公开桌面版本，支持批量导入 PDF、检测加密状态、AES 解密、批量输出命名、原文件名导出，以及中英双语界面。
+这个版本提供了更完整的 Batch PDF Decryptor 桌面版本，重点覆盖整套批量处理流程：批量导入 PDF、自动检测加密状态、输入一次密码后批量解密，并按统一规则输出文件名。
+
+## Formal Release Notes Template
+
+```md
+## Batch PDF Decryptor vX.Y.Z
+
+### English
+Batch PDF Decryptor is a desktop utility built for high-volume PDF password removal and output normalization.
+
+Highlights:
+- Import PDF files or entire folders in batches
+- Detect encrypted files automatically before processing
+- Remove passwords from multiple PDFs with one password
+- Support AES-encrypted PDFs
+- Export with original names or structured batch naming rules
+- Available in both Chinese and English
+
+Release preview:
+![English preview](https://raw.githubusercontent.com/Sevacenix/Batch_PDF_Decryptor/main/docs/assets/release-preview-en.svg)
+![Chinese preview](https://raw.githubusercontent.com/Sevacenix/Batch_PDF_Decryptor/main/docs/assets/release-preview-zh-CN.svg)
+
+### 中文
+Batch PDF Decryptor 是一个面向批量 PDF 去密码和输出规范化的桌面工具。
+
+功能卖点：
+- 支持批量导入 PDF 文件或整个文件夹
+- 处理前自动检测文件是否加密
+- 输入一次密码后即可批量去除多个 PDF 的密码
+- 支持 AES 加密 PDF
+- 支持按原文件名或规则化命名方式批量输出
+- 提供中文和英文界面
+```
 
 ## Recommended Release Asset
 

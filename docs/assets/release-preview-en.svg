@@ -1,0 +1,46 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="128" y1="120" x2="1472" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <rect x="80" y="72" width="1440" height="756" rx="28" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+  <text x="130" y="150" fill="#60A5FA" font-family="Arial, sans-serif" font-size="22" font-weight="700">Batch PDF Decryptor</text>
+  <text x="130" y="214" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="52" font-weight="700">Batch decryption for real PDF workloads</text>
+  <text x="130" y="262" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="24">Decrypt many PDFs with one password and export them with consistent output names.</text>
+  <rect x="130" y="312" width="220" height="52" rx="14" fill="#2563EB"/>
+  <text x="240" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">AES Support</text>
+  <rect x="370" y="312" width="262" height="52" rx="14" fill="#0F766E"/>
+  <text x="501" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">Batch Naming Output</text>
+  <rect x="652" y="312" width="222" height="52" rx="14" fill="#7C3AED"/>
+  <text x="763" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">Bilingual UI</text>
+
+  <rect x="130" y="410" width="620" height="320" rx="22" fill="#0B1220" stroke="#334155"/>
+  <text x="160" y="456" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="28" font-weight="700">Why it stands out</text>
+  <text x="160" y="508" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">1. Import PDF files or whole folders in bulk</text>
+  <text x="160" y="554" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">2. Detect encryption status before processing</text>
+  <text x="160" y="600" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">3. Remove passwords from multiple PDFs at once</text>
+  <text x="160" y="646" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">4. Export using original names or structured patterns</text>
+  <text x="160" y="692" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">5. Keep the workflow simple for non-technical users</text>
+
+  <rect x="790" y="410" width="650" height="320" rx="22" fill="#0B1220" stroke="#334155"/>
+  <text x="820" y="456" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="28" font-weight="700">Release highlights</text>
+  <text x="820" y="508" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">Batch import</text>
+  <text x="980" y="508" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">PDF files and folders</text>
+  <text x="820" y="554" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">One-password decrypt</text>
+  <text x="1040" y="554" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">Process many PDFs in one run</text>
+  <text x="820" y="600" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">Output control</text>
+  <text x="980" y="600" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">Original names or custom patterns</text>
+  <text x="820" y="646" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">Cross-platform</text>
+  <text x="980" y="646" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">macOS and Windows packages</text>
+  <text x="820" y="692" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">Audience</text>
+  <text x="935" y="692" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">Users who want no-command-line decryption</text>
+
+  <text x="130" y="790" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">Release-ready preview asset for GitHub Releases and README sections.</text>
+</svg>

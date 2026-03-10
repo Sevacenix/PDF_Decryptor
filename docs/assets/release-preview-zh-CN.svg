@@ -1,0 +1,46 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="128" y1="120" x2="1472" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <rect x="80" y="72" width="1440" height="756" rx="28" fill="url(#panel)" stroke="#334155" stroke-width="2"/>
+  <text x="130" y="150" fill="#38BDF8" font-family="Arial, sans-serif" font-size="22" font-weight="700">Batch PDF Decryptor</text>
+  <text x="130" y="214" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="50" font-weight="700">面向批量 PDF 解密与输出命名的桌面工具</text>
+  <text x="130" y="262" fill="#CBD5E1" font-family="Arial, sans-serif" font-size="24">一次输入密码，完成多份 PDF 去密码，并按统一规则输出文件名。</text>
+  <rect x="130" y="312" width="220" height="52" rx="14" fill="#2563EB"/>
+  <text x="240" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">批量解密</text>
+  <rect x="370" y="312" width="240" height="52" rx="14" fill="#0F766E"/>
+  <text x="490" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">批量命名输出</text>
+  <rect x="630" y="312" width="220" height="52" rx="14" fill="#7C3AED"/>
+  <text x="740" y="345" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="700">AES 支持</text>
+
+  <rect x="130" y="410" width="620" height="320" rx="22" fill="#0B1220" stroke="#334155"/>
+  <text x="160" y="456" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="28" font-weight="700">核心卖点</text>
+  <text x="160" y="508" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">1. 支持批量导入 PDF 文件或整个文件夹</text>
+  <text x="160" y="554" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">2. 处理前自动检测每个文件的加密状态</text>
+  <text x="160" y="600" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">3. 输入一次密码后批量去除多个 PDF 的密码</text>
+  <text x="160" y="646" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">4. 支持原文件名导出和规则化批量命名</text>
+  <text x="160" y="692" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">5. 面向非命令行用户，流程直观</text>
+
+  <rect x="790" y="410" width="650" height="320" rx="22" fill="#0B1220" stroke="#334155"/>
+  <text x="820" y="456" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="28" font-weight="700">发布页可强调的能力</text>
+  <text x="820" y="508" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">批量导入</text>
+  <text x="960" y="508" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">一次载入多份 PDF 或整个目录</text>
+  <text x="820" y="554" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">自动检测</text>
+  <text x="960" y="554" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">先确认哪些文件需要解密</text>
+  <text x="820" y="600" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">统一处理</text>
+  <text x="960" y="600" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">一次密码处理多个文件</text>
+  <text x="820" y="646" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">输出规范</text>
+  <text x="960" y="646" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">支持原名导出和规则化命名</text>
+  <text x="820" y="692" fill="#93C5FD" font-family="Arial, sans-serif" font-size="22">平台支持</text>
+  <text x="960" y="692" fill="#F8FAFC" font-family="Arial, sans-serif" font-size="22">可提供 macOS 和 Windows 版本</text>
+
+  <text x="130" y="790" fill="#94A3B8" font-family="Arial, sans-serif" font-size="18">适用于 GitHub Release 页面和 README 展示区的中文宣传图。</text>
+</svg>

@@ -1,7 +1,7 @@
 # 批量 PDF 解密与命名工具
 
-[![Release](https://img.shields.io/github/v/release/Sevacenix/PDF_Decryptor)](https://github.com/Sevacenix/PDF_Decryptor/releases)
-[![License](https://img.shields.io/github/license/Sevacenix/PDF_Decryptor)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/Sevacenix/Batch_PDF_Decryptor)](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases)
+[![License](https://img.shields.io/github/license/Sevacenix/Batch_PDF_Decryptor)](LICENSE)
 
 一个桌面工具，用来批量检测 PDF 是否加密、输入一次密码后批量解密，并按规则批量命名输出结果文件。
 
@@ -9,14 +9,22 @@
 
 ## 下载
 
-[下载最新 macOS 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
-[下载 SHA-256 校验文件](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
-[下载最新 Windows 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
-[下载 Windows SHA-256 校验文件](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
+[下载最新 macOS 版本](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
+[下载 SHA-256 校验文件](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
+[下载最新 Windows 版本](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
+[下载 Windows SHA-256 校验文件](https://github.com/Sevacenix/Batch_PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
 
 ## 预览图
 
 ![PDF Decryptor 预览图](docs/assets/pdf-decryptor-preview.svg)
+
+## Release 页面预览图
+
+English:
+![Batch PDF Decryptor English preview](docs/assets/release-preview-en.svg)
+
+中文：
+![Batch PDF Decryptor 中文预览图](docs/assets/release-preview-zh-CN.svg)
 
 ## 功能特性
 
@@ -51,7 +59,7 @@ brew install python@3.12 python-tk@3.12
 
 ```powershell
 py -3.12 -m pip install -r requirements.txt
-./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.4"
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.5"
 ```
 
 会生成：

@@ -6,7 +6,7 @@ on:
       app_version:
         description: App version to package
         required: false
-        default: 1.0.4
+        default: 1.0.5
   release:
     types:
       - published

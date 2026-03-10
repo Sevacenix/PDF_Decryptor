@@ -7,7 +7,7 @@ BUILD_ROOT="/tmp/pdf_decryptor_build"
 VENV_DIR="/tmp/pdf_decryptor_build_venv"
 APP_BUNDLE_NAME="Batch PDF Decryptor"
 PYTHON_BIN="${PYTHON_BIN:-}"
-APP_VERSION="${APP_VERSION:-1.0.4}"
+APP_VERSION="${APP_VERSION:-1.0.5}"
 ICON_PATH="$PROJECT_ROOT/assets/PDF_Decryptor.icns"
 
 if [[ -z "$PYTHON_BIN" ]]; then
