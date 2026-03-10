@@ -17,6 +17,7 @@
 ## Recommended Release Asset
 
 - `dist/PDF_Decryptor-macOS.zip`
+- `dist/PDF_Decryptor-windows.zip`
 
 ## Suggested GitHub Topics
 

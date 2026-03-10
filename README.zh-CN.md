@@ -42,11 +42,27 @@ brew install python@3.12 python-tk@3.12
 ./scripts/build_macos_app.sh
 ```
 
+## 打包 Windows 应用
+
+在 Windows PowerShell 中执行：
+
+```powershell
+py -3.12 -m pip install -r requirements.txt
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.3"
+```
+
+会生成：
+
+- `dist/PDF_Decryptor-windows.zip`
+- `dist/PDF_Decryptor-windows.zip.sha256`
+
 ## 安装说明
 
 - macOS 首次打开时可能会提示确认应用来源
 - 如果出现提示，可以右键应用后选择“打开”
 - 每个 release 也会附带一个 `.sha256` 校验文件
+- Windows 打包脚本已经准备好：`scripts/build_windows_app.ps1`
+- GitHub Actions 可以自动构建并上传 Windows 发布资产
 
 ## 文件名格式
 

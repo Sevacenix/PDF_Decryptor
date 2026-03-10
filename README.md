@@ -42,11 +42,27 @@ brew install python@3.12 python-tk@3.12
 ./scripts/build_macos_app.sh
 ```
 
+## Build Windows App
+
+Use Windows PowerShell:
+
+```powershell
+py -3.12 -m pip install -r requirements.txt
+./scripts/build_windows_app.ps1 -PythonExe "py -3.12" -AppVersion "1.0.3"
+```
+
+This generates:
+
+- `dist/PDF_Decryptor-windows.zip`
+- `dist/PDF_Decryptor-windows.zip.sha256`
+
 ## Install Notes
 
 - macOS may ask you to confirm the app on first launch
 - If that happens, right-click the app and choose `Open`
 - Each release also includes a `.sha256` checksum file for verification
+- Windows packaging is prepared through `scripts/build_windows_app.ps1`
+- GitHub Actions can build and upload the Windows release asset automatically
 
 ## Output Name Pattern
 

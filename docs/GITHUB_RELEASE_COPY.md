@@ -50,6 +50,8 @@ This release includes the first polished public desktop build of PDF Decryptor. 
 
 English:
 - PDF_Decryptor-macOS.zip
+- PDF_Decryptor-windows.zip
 
 中文：
 - PDF_Decryptor-macOS.zip
+- PDF_Decryptor-windows.zip

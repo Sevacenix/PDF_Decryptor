@@ -1,0 +1,64 @@
+name: Build Windows Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_version:
+        description: App version to package
+        required: false
+        default: 1.0.3
+  release:
+    types:
+      - published
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Resolve app version
+        id: version
+        shell: pwsh
+        run: |
+          if ("${{ github.event_name }}" -eq "release") {
+            $version = "${{ github.event.release.tag_name }}".TrimStart("v")
+          } else {
+            $version = "${{ github.event.inputs.app_version }}"
+          }
+          "app_version=$version" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+
+      - name: Build Windows package
+        shell: pwsh
+        run: |
+          ./scripts/build_windows_app.ps1 -PythonExe "python" -AppVersion "${{ steps.version.outputs.app_version }}"
+
+      - name: Upload workflow artifact
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF_Decryptor-windows-${{ steps.version.outputs.app_version }}
+          path: |
+            dist/PDF_Decryptor-windows.zip
+            dist/PDF_Decryptor-windows.zip.sha256
+
+      - name: Upload assets to release
+        if: github.event_name == 'release'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" \
+            dist/PDF_Decryptor-windows.zip \
+            dist/PDF_Decryptor-windows.zip.sha256 \
+            --clobber
