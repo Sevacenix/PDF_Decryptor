@@ -11,6 +11,8 @@ A lightweight desktop utility for detecting and removing PDF passwords in batche
 
 [Download the latest macOS build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
 [Download the SHA-256 checksum](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
+[Download the latest Windows build](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
+[Download the Windows SHA-256 checksum](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
 
 ## Preview
 
@@ -60,6 +62,8 @@ This generates:
 
 - macOS may ask you to confirm the app on first launch
 - If that happens, right-click the app and choose `Open`
+- Windows may show SmartScreen on first launch
+- If that happens, choose `More info` and then `Run anyway`
 - Each release also includes a `.sha256` checksum file for verification
 - Windows packaging is prepared through `scripts/build_windows_app.ps1`
 - GitHub Actions can build and upload the Windows release asset automatically

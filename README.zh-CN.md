@@ -11,6 +11,8 @@
 
 [下载最新 macOS 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip)
 [下载 SHA-256 校验文件](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-macOS.zip.sha256)
+[下载最新 Windows 版本](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip)
+[下载 Windows SHA-256 校验文件](https://github.com/Sevacenix/PDF_Decryptor/releases/latest/download/PDF_Decryptor-windows.zip.sha256)
 
 ## 预览图
 
@@ -60,6 +62,8 @@ py -3.12 -m pip install -r requirements.txt
 
 - macOS 首次打开时可能会提示确认应用来源
 - 如果出现提示，可以右键应用后选择“打开”
+- Windows 首次打开时可能会看到 SmartScreen 提示
+- 如果出现提示，可以点击“更多信息”后继续运行
 - 每个 release 也会附带一个 `.sha256` 校验文件
 - Windows 打包脚本已经准备好：`scripts/build_windows_app.ps1`
 - GitHub Actions 可以自动构建并上传 Windows 发布资产
